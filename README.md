@@ -1,5 +1,5 @@
 # s25wb85sidduri
-[My Remote Server on Render](https://s25wb85sidduri.onrender.com)
+[My Remote Server on Render](https://s25db85sidduri-esk6.onrender.com)
 ## Resource Class
 - **Class Name:** Expeditions
 - **Attributes:**
