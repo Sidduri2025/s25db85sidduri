@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+    var results = [
+      { name: "Everest Base Camp", destination: "Nepal", duration: 14 },
+      { name: "Amazon Rainforest", destination: "Brazil", duration: 10 },
+      { name: "Antarctic Voyage", destination: "Antarctica", duration: 21 }
+    ];
+  .container-fluid
+    .row
+      each expedition, index in results
+        .col-sm-4
+          h3 #{expedition.name}
+          p Destination: #{expedition.destination}
+          p Duration: #{expedition.duration} days
+          div(class="buy-button", onclick=`buy(${index})`) Purchase
+  br
+  a(href='/') Go Back to Home
+  script.
+    function buy(index) {
+      alert('You purchased item ' + index);
+    }

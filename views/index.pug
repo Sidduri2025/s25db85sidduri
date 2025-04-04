@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p This is Vaishnavi Sidduri
+  button(type="button", class="btn btn-primary", onclick="faster()") Click Me
+  div#faster Add in extra
+  a(href='/expeditions') View Search Results
+
+  script.
+      let value = 1;
+      let amt = 2;
+
+      function faster() {
+        amt *= 2;
+        value += amt;
+        document.getElementById("faster").innerText = `Faster ${value} times ${amt}`;
+      }
