@@ -2,18 +2,19 @@ extends layout
 
 block content
   h1= title
-    var results = [
-      { name: "Everest Base Camp", destination: "Nepal", duration: 14 },
-      { name: "Amazon Rainforest", destination: "Brazil", duration: 10 },
-      { name: "Antarctic Voyage", destination: "Antarctica", duration: 21 }
-    ];
+    - let items = results;
+      //- var results = [
+      //-   { name: "Everest Base Camp", destination: "Nepal", duration: 14 },
+      //-   { name: "Amazon Rainforest", destination: "Brazil", duration: 10 },
+      //-   { name: "Antarctic Voyage", destination: "Antarctica", duration: 21 }
+      //- ];
   .container-fluid
     .row
-      each expedition, index in results
+      each expedition, index in items
         .col-sm-4
-          h3 #{expedition.name}
-          p Destination: #{expedition.destination}
-          p Duration: #{expedition.duration} days
+          h3 #{expedition.cost}
+          p Destination: #{expedition.size}
+          p Duration: #{expedition.Type} days
           div(class="buy-button", onclick=`buy(${index})`) Purchase
   br
   a(href='/') Go Back to Home

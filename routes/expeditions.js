@@ -10,6 +10,12 @@ router.get('/', function(req, res, next) {
   ];
   res.render('expeditions', { title: "Search Results - Expeditions", expeditions });
 });
-
+var express = require('express');
+const expeditions_controlers= require('../controllers/expeditions');
+var router = express.Router();
+/* GET costumes */
+router.get('/', expeditions_controlers.expeditions_view_all_Page );
 module.exports = router;
+
+
 
