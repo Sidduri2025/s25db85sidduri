@@ -18,12 +18,5 @@ router.get('/expeditions/:id', expeditions_controller.expeditions_detail);
 // GET request for list of all Costume items.
 router.get('/expeditions', expeditions_controller.expeditions_list);
 module.exports = router;
-// API for our resources
-exports.api = function (req, res) {
-    res.write('[');
-    res.write('{"resource":"expeditions", ');
-    res.write(' "verbs":["GET","PUT", "DELETE"] ');
-    res.write('}');
-    res.write(']')
-    res.send();
-};
+
+
