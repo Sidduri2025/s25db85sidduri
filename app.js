@@ -82,7 +82,7 @@ async function recreateDB() {
 
   let instance2 = new
     expeditions({
-      expeditions_type: "ghost", size: 'large', cost: 18
+      expeditions_type: "Vaishnavi", size: 'Small', cost: 18
     });
   instance2.save().then(doc => {
     console.log("Second object saved")
@@ -93,7 +93,7 @@ async function recreateDB() {
 
   let instance3 = new
     expeditions({
-      expeditions_type: "ghost", size: 'small', cost: 15
+      expeditions_type: "Praneetha", size: 'Medium', cost: 15
     });
   instance3.save().then(doc => {
     console.log("Third object saved")
