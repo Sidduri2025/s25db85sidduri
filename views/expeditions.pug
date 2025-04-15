@@ -1,23 +1,34 @@
 extends layout
 
 block content
-  h1= title
-    - let items = results;
-      //- var results = [
-      //-   { name: "Everest Base Camp", destination: "Nepal", duration: 14 },
-      //-   { name: "Amazon Rainforest", destination: "Brazil", duration: 10 },
-      //-   { name: "Antarctic Voyage", destination: "Antarctica", duration: 21 }
-      //- ];
+  h1.text-center.mb-4= title
+  .text-center.mb-3
+    a.btn.btn-primary(href="/expeditionse/create") Create expeditions
+
+  - let items = results;
+    //- var results = [
+    //-   { name: "Everest Base Camp", destination: "Nepal", duration: 14 },
+    //-   { name: "Amazon Rainforest", destination: "Brazil", duration: 10 },
+    //-   { name: "Antarctic Voyage", destination: "Antarctica", duration: 21 }
+    //- ];
+
   .container-fluid
     .row
       each expedition, index in items
-        .col-sm-4
-          h3 #{expedition.cost}
-          p Destination: #{expedition.size}
-          p Duration: #{expedition.Type} days
-          div(class="buy-button", onclick=`buy(${index})`) Purchase
+        .col-md-4.mb-4
+          .card.shadow.rounded.p-3
+            h3.card-title.text-primary $#{expedition.cost}
+            p.card-text <strong>Destination:</strong> #{expedition.size}
+            p.card-text <strong>Duration:</strong> #{expedition.Type} days
+            .d-flex.justify-content-between.flex-wrap.mt-3
+              div(class="btn btn-outline-success btn-sm", onclick=`buy(${index})`) Purchase
+              button.btn.btn-primary.btn-sm( onclick=destination ) Update
+              button.btn.btn-success.btn-sm( onclick=destinationdetail ) Detail
+              button.btn.btn-warning.btn-sm( onclick=destinationdelete ) Delete
+
   br
-  a(href='/') Go Back to Home
+  a.btn.btn-secondary(href='/') Go Back to Home
+
   script.
     function buy(index) {
       alert('You purchased item ' + index);
